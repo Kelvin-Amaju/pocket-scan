@@ -1,0 +1,36 @@
+{
+  "name": "pocket-scan",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.mjs",
+    "android:setup": "npm run build && node scripts/android.mjs setup",
+    "android:sync": "npm run build && node scripts/android.mjs sync",
+    "android:open": "cap open android",
+    "android:apk": "npm run android:sync && node scripts/android.mjs apk",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "playwright": "^1.64.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
